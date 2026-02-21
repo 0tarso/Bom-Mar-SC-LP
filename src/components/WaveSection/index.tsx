@@ -1,9 +1,13 @@
-import React from "react";
+import { type ReactNode } from "react";
 
 export default function WaveSection({
   children,
   bg = "#4085cb",
   height = 120,
+}: {
+  children: ReactNode,
+  bg?: string,
+  height?: number
 }) {
   return (
     <section style={{ background: bg, position: "relative" }}>

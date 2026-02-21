@@ -13,7 +13,9 @@ export default function Example() {
       <span className="mx-6 font-montserrat-black-italic text-[100px] text-white">MAR</span>
       <span className="mx-6 font-montserrat-black-italic text-[100px] text-white">PRAIA</span>
       <span className="mx-6 font-montserrat-black-italic text-[100px] text-white">CLIMA</span>
+      <span className="mx-6 font-montserrat-black-italic text-[100px] text-white">MAR</span>
       <span className="mx-6 font-montserrat-black-italic text-[100px] text-white">SAÚDE</span>
+      <span className="mx-6 font-montserrat-black-italic text-[100px] text-white">CLIMA</span>
     </Marquee>
   );
 }

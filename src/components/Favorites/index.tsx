@@ -1,4 +1,3 @@
-import React from "react"
 import { motion } from "framer-motion"
 
 import card1 from "../../assets/card-beach-1-1.webp"

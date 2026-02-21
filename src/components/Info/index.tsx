@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import WaveSection from '../WaveSection'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import phoneMock from "../../assets/celMock-1.webp"
@@ -29,7 +29,7 @@ export default function InfoSection() {
         '>
 
           {/* mockup com rotação no scroll */}
-          <div ref={ref} className='flex-1 perspective-[1200px]'>
+          <div ref={ref} className='flex flex-1 perspective-[1200px] justify-end'>
             <motion.img
               src={phoneMock}
               style={{

@@ -1,4 +1,6 @@
-export function ButtonGlass({ children }) {
+import type { ReactNode } from "react";
+
+export function ButtonGlass({ children }: { children: ReactNode }) {
   return (
     <button
       className="
