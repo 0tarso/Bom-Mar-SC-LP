@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Logo / descrição */}
           <div className='flex flex-col items-center'>
             {/* <h2 className="text-blue-primary text-xl font-bold">BomMar SC</h2> */}
-            <a href='#start'>
+            <a href='/'>
               <img src={logo} className='w-[120px]' />
             </a>
             <p className="mt-3 text-sm text-black/60">
@@ -18,15 +18,12 @@ export default function Footer() {
           </div>
 
           {/* Navegação */}
-          {/* <div>
-            <h3 className="text-black font-semibold mb-3">Navegação</h3>
+          <div>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-black transition">Início</a></li>
-              <li><a href="#" className="hover:text-black transition">Sobre</a></li>
-              <li><a href="#" className="hover:text-black transition">Projetos</a></li>
-              <li><a href="#" className="hover:text-black transition">Contato</a></li>
+              <li><a href="/" className="hover:text-black transition">Início</a></li>
+              <li><a href="/download" className="hover:text-black transition">Download</a></li>
             </ul>
-          </div> */}
+          </div>
 
           {/* Recursos */}
           {/* <div>

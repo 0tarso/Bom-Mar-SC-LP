@@ -6,8 +6,15 @@ import { ButtonGlass } from '../ButtonGlass'
 import StepsCard from '../StepsCard'
 
 import { motion } from 'framer-motion'
+import { useNavigate, useNavigation, useRoutes } from 'react-router-dom'
 
 export default function Map() {
+  const navigate = useNavigate()
+
+  const handleNavigateToDownload = () => {
+    navigate('/download')
+  }
+
   return (
     <section className=''>
       <WaveSection>
@@ -93,7 +100,9 @@ export default function Map() {
 
 
 
-            <ButtonGlass>
+            <ButtonGlass
+              onClickFunc={handleNavigateToDownload}
+            >
               <span>
                 <text className='
               font-montserrat-bold

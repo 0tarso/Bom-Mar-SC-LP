@@ -1,8 +1,14 @@
 import type { ReactNode } from "react";
 
-export function ButtonGlass({ children }: { children: ReactNode }) {
+export function ButtonGlass({
+  children,
+  onClickFunc }: {
+    children: ReactNode,
+    onClickFunc?: () => void
+  }) {
   return (
     <button
+      onClick={() => onClickFunc()}
       className="
         w-full
         max-sm:w-[320px]
