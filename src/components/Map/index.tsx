@@ -6,7 +6,7 @@ import { ButtonGlass } from '../ButtonGlass'
 import StepsCard from '../StepsCard'
 
 import { motion } from 'framer-motion'
-import { useNavigate, useNavigation, useRoutes } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function Map() {
   const navigate = useNavigate()

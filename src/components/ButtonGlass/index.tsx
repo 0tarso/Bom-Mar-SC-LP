@@ -4,7 +4,7 @@ export function ButtonGlass({
   children,
   onClickFunc }: {
     children: ReactNode,
-    onClickFunc?: () => void
+    onClickFunc: () => void
   }) {
   return (
     <button

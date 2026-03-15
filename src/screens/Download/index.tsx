@@ -1,11 +1,11 @@
 import Lottie from 'lottie-react'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { motion } from 'framer-motion'
 import animation from '../../assets/animations/empty_favorites_animation.json'
 import WaveSection from '../../components/WaveSection'
 import { ButtonGlass } from '../../components/ButtonGlass'
-import { useNavigate, useNavigation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Footer from '../../components/Footer'
 import { getVersionGitHub } from '../../api/getVersion'
 
@@ -13,7 +13,12 @@ const downloadLink = 'https://github.com/0tarso/Bom-Mar-SC-APP/releases/download
 
 export default function DownloadScreen() {
   const navigate = useNavigate()
-  const [versionResume, setVersionResume] = useState(null)
+  const [versionResume, setVersionResume] = useState<{
+    versao: string;
+    notes: string;
+    downloadUrl?: string;
+    published_at?: string;
+  } | null>(null)
 
   const handleNavigate = () => {
     navigate('/')
@@ -98,20 +103,24 @@ export default function DownloadScreen() {
               transition={{ duration: 0.5, delay: 0.7 }}
               className='pl-2 text-left font-montserrat-medium text-white'
             >✅ Código seguro e atualizado</motion.p>
-            <motion.p initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className='mt-8 pl-2 text-left font-montserrat-bold text-white'
-            >Notas da versão: {versionResume?.versao}</motion.p>
-            <motion.div initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className='mt-2 pl-2 text-left font-montserrat-medium prose prose-invert text-white'
-            >
-              <ReactMarkdown>
-                {versionResume?.notes}
-              </ReactMarkdown>
-            </motion.div>
+            {versionResume !== null && (
+              <>
+                <motion.p initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className='mt-8 pl-2 text-left font-montserrat-bold text-white'
+                >Notas da versão: {versionResume?.versao}</motion.p>
+                <motion.div initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className='mt-2 pl-2 text-left font-montserrat-medium prose prose-invert text-white'
+                >
+                  <ReactMarkdown>
+                    {versionResume?.notes}
+                  </ReactMarkdown>
+                </motion.div>
+              </>
+            )}
 
 
             <motion.div
