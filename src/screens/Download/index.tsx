@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import Footer from '../../components/Footer'
 import { getVersionGitHub } from '../../api/getVersion'
 
-const downloadLink = 'https://github.com/0tarso/Bom-Mar-SC-APP/releases/download/v1.2.2/bom-mar-sc-v1.2.2.apk'
+const downloadLink = 'https://github.com/0tarso/Bom-Mar-SC-APP/releases/v1.2.2'
 
 export default function DownloadScreen() {
   const navigate = useNavigate()
