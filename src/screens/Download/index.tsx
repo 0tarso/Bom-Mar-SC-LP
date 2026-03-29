@@ -7,9 +7,11 @@ import WaveSection from '../../components/WaveSection'
 import { ButtonGlass } from '../../components/ButtonGlass'
 import { useNavigate } from 'react-router-dom'
 import Footer from '../../components/Footer'
-import { getVersionGitHub } from '../../api/getVersion'
+import { getVersionGitHub as getAppVersionFromGitHub } from '../../api/getVersion'
 
-const downloadLink = 'https://github.com/0tarso/Bom-Mar-SC-APP/releases/v1.2.2'
+
+const appNameVersion = 'bom-mar-sc-v1.3.0.apk'
+const downloadLink = 'https://github.com/0tarso/Bom-Mar-SC-APP/releases/tag/v1.3.0'
 
 export default function DownloadScreen() {
   const navigate = useNavigate()
@@ -24,13 +26,9 @@ export default function DownloadScreen() {
     navigate('/')
   }
 
-  const handleDownloadLink = () => {
-    window.open(downloadLink, '_blank')
-  }
-
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getVersionGitHub()
+      const data = await getAppVersionFromGitHub()
 
       if (data) setVersionResume(data)
       console.log(data)
@@ -132,9 +130,13 @@ export default function DownloadScreen() {
             '>
 
               <ButtonGlass
-                onClickFunc={() => handleDownloadLink()}
+                onClickFunc={() => { }}
               >
-                <p>Baixar</p>
+                <a
+                  href={downloadLink}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >Baixar</a>
               </ButtonGlass>
             </motion.div>
 
