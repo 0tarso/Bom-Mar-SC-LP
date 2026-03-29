@@ -10,7 +10,6 @@ import Footer from '../../components/Footer'
 import { getVersionGitHub as getAppVersionFromGitHub } from '../../api/getVersion'
 
 
-const appNameVersion = 'bom-mar-sc-v1.3.0.apk'
 const downloadLink = 'https://github.com/0tarso/Bom-Mar-SC-APP/releases/tag/v1.3.0'
 
 export default function DownloadScreen() {
@@ -31,7 +30,6 @@ export default function DownloadScreen() {
       const data = await getAppVersionFromGitHub()
 
       if (data) setVersionResume(data)
-      console.log(data)
     }
 
     fetchData()
