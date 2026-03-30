@@ -8,6 +8,7 @@ import { ButtonGlass } from '../../components/ButtonGlass'
 import { useNavigate } from 'react-router-dom'
 import Footer from '../../components/Footer'
 import { getVersionGitHub as getAppVersionFromGitHub } from '../../api/getVersion'
+import { Helmet } from 'react-helmet-async'
 
 
 const downloadLink = 'https://github.com/0tarso/Bom-Mar-SC-APP/releases/tag/v1.3.0'
@@ -43,6 +44,19 @@ export default function DownloadScreen() {
       overflow-hidden
       '
     >
+      <Helmet>
+        <title>Bom Mar SC | Download</title>
+        <meta name="description" content="Faça o download de Bom Mar SC por aqui mesmo" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph (Facebook, WhatsApp) */}
+        <meta property="og:title" content="Bom Mar SC Download" />
+        <meta property="og:description" content="Descubra praias limpas em Santa Catarina baixando o app" />
+        <meta property="og:image" content="https://bommarsc.vercel.app/icon.png" />
+        <meta property="og:url" content="https://bommarsc.vercel.app" />
+
+        <link rel="canonical" href="https://bommarsc.vercel.app" />
+      </Helmet>
       <WaveSection
       // bg='#fff'
       // height={waveHeight}

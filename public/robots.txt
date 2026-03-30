@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bommarsc.vercel.app/sitemap.xml
